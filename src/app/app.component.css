@@ -1,0 +1,34 @@
+.menu-spacer {
+  flex: 1 1 auto;
+}.img-init{
+  position: relative; z-index:1; width:70%; height:60%;
+}
+.normal-text{
+  text-align: center;
+  text-decoration: blink;
+}
+
+@media (max-width: 600px) {
+  .normal-text {
+    text-align:justify;
+  }
+}
+.opc-menu:hover{
+  transform: scale(1.1);
+
+}
+.a-nav{
+
+  width: 100%;
+  color: rgba(112,43,181,71);
+
+}
+.division{
+  color: blueviolet;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+.a-nav:hover {
+background-color: rgba(109,43,204,71);
+color: white;
+}

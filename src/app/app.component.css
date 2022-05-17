@@ -8,11 +8,8 @@
   text-decoration: blink;
 }
 
-@media (max-width: 600px) {
-  .normal-text {
-    text-align:justify;
-  }
-}
+
+
 .opc-menu:hover{
   transform: scale(1.1);
 
@@ -31,4 +28,14 @@
 .a-nav:hover {
 background-color: rgba(109,43,204,71);
 color: white;
+}
+table {
+  width: 100%;
+}
+h3{ color: blueviolet;
+    text-align: center;
+}
+.cont-reporte{
+  margin: 0 auto;
+  width: 80%;
 }

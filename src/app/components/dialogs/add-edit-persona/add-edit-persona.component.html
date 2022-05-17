@@ -1,0 +1,42 @@
+<h1 mat-dialog-title class="titulo-add-edit">{{data.titulo}}</h1>
+<div mat-dialog-content>
+  <form class="form-persona" (ngSubmit)="onSubmit()" #personaForm="ngForm">
+    <h3>{{titulo}}</h3>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Identificación</mat-label>
+      <input matInput placeholder="Ex. 10615555" required  [(ngModel)]="data.persona.identificacion" name="identificacion">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Nombre</mat-label>
+      <input matInput placeholder="Ex. Pedro" required  [(ngModel)]="data.persona.nombre" name="nombre">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Apellido</mat-label>
+      <input matInput placeholder="Ex. Ramirez" type="text" required  [(ngModel)]="data.persona.apellido" name="apellido">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Edad</mat-label>
+      <input matInput placeholder="Ex. 15" type="number" required  [(ngModel)]="data.persona.edad" name="edad">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Dirección</mat-label>
+      <input matInput placeholder="Ex. calle 15 # 2315" type="text" required  [(ngModel)]="data.persona.direccion" name="direccion">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Telefono</mat-label>
+      <input matInput placeholder="Ex. 312847562" type="text" required  [(ngModel)]="data.persona.telefono" name="telefono">
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions class="full-width">
+  <button mat-stroked-button (click)="onNoClick()">Cerrar</button>
+  <button mat-stroked-button [disabled]="!personaForm.form.valid"   type="submit" (click)="guardarPersona()" color="primary">{{nombreAccion}}</button>
+
+</div>
+
+

@@ -1,1 +1,67 @@
-<p>alumno works!</p>
+<mat-card >
+  <h1><strong>Alumnos</strong></h1>
+  <button mat-raised-button color="primary" class="btn-registro" (click)="adicionarAlumno()">Registrar alumno</button>
+  <div class="mat-elevation-z3" >
+    <table mat-table [dataSource]="dataSource">
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="identificacion">
+        <th mat-header-cell *matHeaderCellDef> Identificación </th>
+        <td mat-cell *matCellDef="let element"> {{element.identificacion}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="apellido">
+        <th mat-header-cell *matHeaderCellDef> Apellido </th>
+        <td mat-cell *matCellDef="let element"> {{element.apellido}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="edad">
+        <th mat-header-cell *matHeaderCellDef> Edad </th>
+        <td mat-cell *matCellDef="let element"> {{element.edad}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="direccion">
+        <th mat-header-cell *matHeaderCellDef> Dirección </th>
+        <td mat-cell *matCellDef="let element"> {{element.direccion}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="telefono">
+        <th mat-header-cell *matHeaderCellDef> Telefono </th>
+        <td mat-cell *matCellDef="let element"> {{element.telefono}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button color="primary" class="btn-accion" aria-label="" title="Asociar asignatura">
+            <mat-icon>cast_for_education</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" class="btn-accion" (click)="eliminarAlumno(element.idPersona)" aria-label="" title="Eliminar alumno">
+            <mat-icon>delete_forever</mat-icon>
+          </button>
+          <button mat-icon-button color="primary" class="btn-accion" (click)="actualizarAlumno(element.idPersona)" aria-label="" title="Actualizar datos">
+            <mat-icon>edit</mat-icon>
+          </button>
+
+        </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons
+                   aria-label="Select page">
+    </mat-paginator>
+  </div>
+</mat-card>

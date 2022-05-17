@@ -32,24 +32,71 @@
       </mat-sidenav>
 
       <mat-sidenav-content fxFlexFill>
-          <div *ngIf="ruta=='/'">
-              <mat-card style="text-align: center;">
-                  <div>
-                      <img class="img-init" src="https://pbs.twimg.com/media/EYTszQhXkAAViJg.jpg" alt="">
-                  </div>
+          <div *ngIf="inicio" >
+            <mat-card >
+              <h3><strong>Reporte de asignaturas</strong></h3>
+              <div class="mat-elevation-z3 cont-reporte" >
+                <table mat-table [dataSource]="dataSource">
 
-                  <div>
-                      <p class="normal-text">
-                          En Transpubenza queremos que nuestros usuarios estén informados de la operación de nuestros vehículos para hacer más fácil tu desplazamiento en medio de la pandemia por COVID-19. Es por eso que te presentamos información de nuestra operación en tiempo
-                          real.
-                      </p>
-                      <p class="normal-text">
-                          En nuestro menú encontraras las siguientes opciones: <a [routerLink]="['/rutas']" (click)="noInicio()">Rutas en tiempo real</a> y <a [routerLink]="['/programacion']" (click)="noInicio()">programación de vehículos</a> para que
-                          accedas a la información de nuestra operación.
-                      </p>
-                  </div>
-              </mat-card>
+                  <!-- Position Column -->
+                  <ng-container matColumnDef="anio">
+                    <th mat-header-cell *matHeaderCellDef> Anio </th>
+                    <td mat-cell *matCellDef="let element"> {{element.anio}} </td>
+                  </ng-container>
 
+                  <!-- Name Column -->
+                  <ng-container matColumnDef="idAlumno">
+                    <th mat-header-cell *matHeaderCellDef> Id. Alumno </th>
+                    <td mat-cell *matCellDef="let element"> {{element.identificacion}} </td>
+                  </ng-container>
+
+                  <!-- Weight Column -->
+                  <ng-container matColumnDef="nombreAlumno">
+                    <th mat-header-cell *matHeaderCellDef> Alumno </th>
+                    <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+                  </ng-container>
+
+                  <!-- Symbol Column -->
+                  <ng-container matColumnDef="idMateria">
+                    <th mat-header-cell *matHeaderCellDef> Id. Materia </th>
+                    <td mat-cell *matCellDef="let element"> {{element.idMateria}} </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="nombreMateria">
+                    <th mat-header-cell *matHeaderCellDef> Materia </th>
+                    <td mat-cell *matCellDef="let element"> {{element.materia}} </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="idProfesor">
+                    <th mat-header-cell *matHeaderCellDef> Id. Profesor </th>
+                    <td mat-cell *matCellDef="let element"> {{element.idProfesor}} </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="nombreProfesor">
+                    <th mat-header-cell *matHeaderCellDef> Profesor </th>
+                    <td mat-cell *matCellDef="let element"> {{element.profesor}} </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="calificacion">
+                    <th mat-header-cell *matHeaderCellDef> Calificación </th>
+                    <td mat-cell *matCellDef="let element"> {{element.calificacion}} </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="aprobo">
+                    <th mat-header-cell *matHeaderCellDef> Aprobo </th>
+                    <td mat-cell *matCellDef="let element"> {{element.aprobo}} </td>
+                  </ng-container>
+
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                               showFirstLastButtons
+                               aria-label="Select page">
+                </mat-paginator>
+              </div>
+            </mat-card>
 
           </div>
           <router-outlet></router-outlet>

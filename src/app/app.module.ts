@@ -22,6 +22,8 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatDatepickerModule } from '@angular/material/datepicker';
+import {MatNativeDateModule } from '@angular/material/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +33,7 @@ import { AlumnoComponent } from './components/alumno/alumno.component';
 import { AsignaturaComponent } from './components/asignatura/asignatura.component';
 import { AddEditPersonaComponent } from './components/dialogs/add-edit-persona/add-edit-persona.component';
 import { ConfirmacionComponent } from './components/dialogs/confirmacion/confirmacion.component';
+import { AsociarAsignaturaComponent } from './components/dialogs/asociar-asignatura/asociar-asignatura.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,9 @@ import { ConfirmacionComponent } from './components/dialogs/confirmacion/confirm
     AlumnoComponent,
     AsignaturaComponent,
     AddEditPersonaComponent,
-    ConfirmacionComponent
+    ConfirmacionComponent,
+    AsociarAsignaturaComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -65,9 +70,13 @@ import { ConfirmacionComponent } from './components/dialogs/confirmacion/confirm
     MatTableModule,
     MatPaginatorModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-  providers: [],
+  providers: [
+    MatNativeDateModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

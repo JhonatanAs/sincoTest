@@ -52,7 +52,7 @@ export class AppComponent {
   }
   siInicio(){
     this.inicio =true;
-    this.ruta="/";
+    this.getReport();
   }
   updateRute() {
     this.dataRouteService.currentRute.subscribe(res => {
@@ -70,6 +70,8 @@ export class AppComponent {
         console.log(res);
       if(res.length > 0){
         this.dataSource= new MatTableDataSource<DataReporte>(res) ;
+        this.dataSource.paginator = this.paginator;
+
         console.log(this.dataSource);
       }
     });

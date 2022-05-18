@@ -23,4 +23,8 @@ export class PersonasService {
   deletePersona(idPersona:number){
     return this.httpClient.delete(this.API_URL + 'Personas/users/'+idPersona);
   }
+
+  updatePersona(persona:Persona): Observable<any> {
+    return this.httpClient.put(this.API_URL + 'Personas/users/'+persona.idPersona,persona);
+  }
 }

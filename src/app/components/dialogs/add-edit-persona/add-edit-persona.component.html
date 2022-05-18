@@ -1,7 +1,6 @@
 <h1 mat-dialog-title class="titulo-add-edit">{{data.titulo}}</h1>
 <div mat-dialog-content>
   <form class="form-persona" (ngSubmit)="onSubmit()" #personaForm="ngForm">
-    <h3>{{titulo}}</h3>
     <mat-form-field class="full-width" appearance="fill">
       <mat-label>Identificación</mat-label>
       <input matInput placeholder="Ex. 10615555" required  [(ngModel)]="data.persona.identificacion" name="identificacion">

@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Constantes } from 'src/app/models/Constantes';
 import { DataDialogPersona } from 'src/app/models/DataDialogPersona';
 import { Persona } from 'src/app/models/Persona';
 
@@ -32,11 +33,11 @@ export class AddEditPersonaComponent implements OnInit {
   }
 
   guardarPersona(){
-    this.dialogRef.close(this.data.persona);
+    this.dialogRef.close(this.data);
   }
 
   isEdit(){
-    if (!this.data.titulo.toLowerCase().includes('registrar')){
+    if (this.data.tipoOperacion == Constantes.ACTUALIZAR_PERSONA){
       this.nombreAccion = 'Actualizar';
     }
   }

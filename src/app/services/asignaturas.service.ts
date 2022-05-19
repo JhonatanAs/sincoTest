@@ -22,8 +22,16 @@ export class AsignaturasService {
     return this.httpClient.get<Asignatura>(this.API_URL + 'Asignatura/asignaturas-profesor');
   }
 
+  getAsignaturas(): Observable<any> {
+    return this.httpClient.get<Asignatura>(this.API_URL + 'Asignatura/asignaturas');
+  }
+
   addAsignaturaAlumno(alumnoAsignatura:PersonaAsignatura): Observable<any> {
     return this.httpClient.post(this.API_URL + 'PersonaAsignatura/alumno-asignatura/',alumnoAsignatura);
+  }
+
+  addAsignatura(asignatura:Asignatura): Observable<any> {
+    return this.httpClient.post(this.API_URL + 'Asignatura/asignaturas/',asignatura);
   }
 
 

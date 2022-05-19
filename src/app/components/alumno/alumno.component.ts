@@ -53,7 +53,6 @@ export class AlumnoComponent implements OnInit {
       res=>{
       if(res.length > 0){
         this.dataAlumnos = res;
-        console.log(this.dataAlumnos);
         this.dataSource= new MatTableDataSource<Persona>(res);
         this.dataSource.paginator = this.paginator;
       }
@@ -85,7 +84,6 @@ export class AlumnoComponent implements OnInit {
       console.log('The dialog was closed');
       if (result) {
         this.alumno = result.persona;
-        debugger;
         if(result.tipoOperacion == Constantes.ACTUALIZAR_PERSONA){
           this.actualizarAlumno(this.alumno);
         }
@@ -151,7 +149,6 @@ export class AlumnoComponent implements OnInit {
     this.snackBar.open(mensaje, 'x',config);
   }
   openActualizarAlumno(idPersona:number){
-    debugger;
     let alumno  = this.dataAlumnos.find(element=>element.idPersona == idPersona);
     this.openDialogAddEdit(Constantes.TITULO_UPDATE_ALUMNO,alumno, Constantes.ACTUALIZAR_PERSONA);
   }

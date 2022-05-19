@@ -1,0 +1,13 @@
+table {
+  width: 100%;
+}
+h1{ color: blueviolet;
+
+}
+.btn-registro{
+  margin-bottom: 10px;
+}
+.btn-registro:hover, .btn-accion:hover{
+  transform: scale(1.1);
+
+}

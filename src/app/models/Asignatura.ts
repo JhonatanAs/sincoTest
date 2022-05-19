@@ -1,6 +1,6 @@
 export interface Asignatura {
   idmateria:number;
-  codig:string;
+  codigo:string;
   nombre:string;
 
 }

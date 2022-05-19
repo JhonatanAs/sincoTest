@@ -82,7 +82,6 @@ export class ProfesorComponent implements OnInit {
       console.log('The dialog was closed');
       if (result) {
         this.profesor = result.persona;
-        debugger;
         if(result.tipoOperacion == Constantes.ACTUALIZAR_PERSONA){
           this.actualizarProfesor(this.profesor);
         }

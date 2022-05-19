@@ -34,6 +34,7 @@ import { AsignaturaComponent } from './components/asignatura/asignatura.componen
 import { AddEditPersonaComponent } from './components/dialogs/add-edit-persona/add-edit-persona.component';
 import { ConfirmacionComponent } from './components/dialogs/confirmacion/confirmacion.component';
 import { AsociarAsignaturaComponent } from './components/dialogs/asociar-asignatura/asociar-asignatura.component';
+import { AddAsignaturaComponent } from './components/dialogs/add-asignatura/add-asignatura.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { AsociarAsignaturaComponent } from './components/dialogs/asociar-asignat
     AddEditPersonaComponent,
     ConfirmacionComponent,
     AsociarAsignaturaComponent,
+    AddAsignaturaComponent,
 
   ],
   imports: [
